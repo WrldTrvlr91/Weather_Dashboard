@@ -1,60 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-
-  <link rel="stylesheet" href="./style.css" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+
 
   <title>Weather Dashboard</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
   <header>
     <!-- Navigation Bar -->
-    <nav>
-      
+    <!-- Image and text -->
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        Weather Dashboard
+      </a>
     </nav>
   </header>
 
-  <main>
+  <main role="main" class="flex-shrink-0">
+    <p></p>
+    <p></p>
+    <div class="container">
+      <form>
+        <div class="form-row align-items-center">
+          <div class="col-sm">
+            <input type="text" class="form-control was-validated" id="citySearchInput" placeholder="City" required>
+            <div class="invalid-tooltip" id="cityValidation">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+          </div>
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Search History
+            </a>
+            <div id="searchHistoryDD" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            </div>
 
-  
+          </div>
+        </div>
+    </div>
+    </form>
+
+    <div id="resultsBox" class="container mt-5">
+
+      <div class="row">
+        <div class="col-md-5 bg-dark text-white" id="cityHeader">
+          <h2 id="cityNameId" class="p-5"></h2>
+          <div id="cityTimeId" class="pl-5"></div>
+        </div>
+
+
+        <div class="col-md-7 bg-light text-dark text-center" id="todayWeatherResult"></div>
+
+      </div>
+      <div class="row mt-5 ">
+        <div class="col-md-12 bg-info text-light" id="fiveDayForecast"></div>
+        <div class="col-sm bg-light text-dark text-center" id="d1WeatherResult"></div>
+        <div class="col-sm bg-light text-dark text-center" id="d2WeatherResult"></div>
+        <div class="col-sm bg-light text-dark text-center" id="d3WeatherResult"></div>
+        <div class="col-sm bg-light text-dark text-center" id="d4WeatherResult"></div>
+        <div class="col-sm bg-light text-dark text-center" id="d5WeatherResult"></div>
+
+
+      </div>
+    </div>
+    </div>
+
   </main>
 
-
-
   <!-- Footer -->
-  <footer></footer>
-  
-
-
-
-
-
-
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container">
+      <span class="text-muted"></span>
+    </div>
+  </footer>
 
   <!-- Linking JQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- Linking moment js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <!-- Linking my script file -->
-  <script src="ym-script.js"></script>
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <!-- Linking moment js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.min.js"
+      integrity="sha512-GqWOXT1UPIvzojfXEPf2ByPu4S0iwX0SfFfZ985fePNpTJPuiWKn47mXd0iyfcpcjcmM/HIRtvrd5TsR87A0Zg=="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone.js"
+      integrity="sha512-+UTmqQPOeqpQhTNQCcxApVxsu4ysVazvtJPgwXsfMrw0Bj2hrahWGaLHtVxAtdLcCvedrhHn5pGhi7JCfilIUg=="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.min.js"
+      integrity="sha512-HZcf3uHWA+Y2P5KNv+F/xa87/flKVP92kUTe/KXjU8URPshczF1Dx+cL5bw0VBGhmqWAK0UbhcqxBbyiNtAnWQ=="
+      crossorigin="anonymous"></script>
+    <!-- Linking my script file -->
+    <script src="script.js"></script>
 
 </body>
 

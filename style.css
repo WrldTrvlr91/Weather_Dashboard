@@ -1,0 +1,22 @@
+#resultsBox {
+    display: none;
+}
+
+.greenUV {
+background-color: green;
+color: white;
+}
+
+.orangeUV {
+background-color: orange;
+color: white;
+}
+
+.redUV {
+background-color: red;
+color: white;
+}
+
+/* .invalid-tooltip{
+    display: block;
+} */
